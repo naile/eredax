@@ -5,7 +5,11 @@ SL commuter traffic stop information
 
 Dependencies
 --------------------
-* Nodejs
+* nodejs
+* expressjs
+* json-proxy
+
+
 
 Fetch all dependencies with npm:
 ```
@@ -15,7 +19,8 @@ npm install
 Configure
 ---------
 Get API keys: https://www.trafiklab.se
-Modify `/app/example.conf` (rename to app.conf)
+
+Edit `/app/example.conf` (rename to <b>app.conf</b>)
 
 Run
 ---
