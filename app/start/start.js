@@ -9,7 +9,7 @@ angular.module('eredax.start', ['ngRoute'])
   });
 }])
 
-.controller('StartCtrl', ['$scope','$http', function(sc,http) {
+.controller('StartCtrl', ['$scope','$http', 'Data', function(sc,http,Data) {
 
   sc.LatestUpdate = "2014-11-03T21:04:03"
   sc.DataAge = 32;
@@ -19,7 +19,8 @@ angular.module('eredax.start', ['ngRoute'])
 	//and return difference in human readable format - moment.js?
 	return sc.LatestUpdate();
   }
-
+  sc.Data = Data.rawData;
+  console.log(sc.Data);
 }]);
 
 function mockTrains()
