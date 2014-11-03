@@ -1,0 +1,8 @@
+<p>Uppdaterad: {{LatestUpdate}} ({{DataAgeActual}} sekunder sedan)</p>
+
+Pendeltåg
+<div ng-repeat="departure in trains">
+  <h3>{{departure.Destination}}</h3>
+  <span>{{departure.DisplayTime}}</span>
+  <span>{{departure.LineNumber}}</span>
+</div>
