@@ -19,10 +19,6 @@ angular.module('eredax.start', ['ngRoute'])
 	//and return difference in human readable format - moment.js?
 	return sc.LatestUpdate();
   }
-  
-  http.get('/api/api2/realtimedepartures.json?key=271067495164489ebc37879f8d030b39&siteid=9701&timewindow=60').success(function(data) {
-    $scope.phones = data;
-  });
 
 }]);
 
