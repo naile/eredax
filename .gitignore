@@ -6,4 +6,4 @@ tmp
 .DS_Store
 .idea
 *.log
-app/app.conf
+app/app.conf.json
