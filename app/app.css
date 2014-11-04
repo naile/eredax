@@ -28,3 +28,32 @@
   content: "";
   padding: 0;
 }
+
+.departures {
+  font-size: 400%;
+}
+.departure-title {
+  font-size: 85%;
+}
+.departure-line {
+  font-weight: 400;
+}
+.departure-time {
+  font-weight: 600;
+  font-size: 100%;
+}
+
+
+.traffic-icon {
+  width: 50px;
+  line-height: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  border-top: 12px solid #ccc;
+  border-bottom: 12px solid #ccc;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-family: arial;
+  margin: 0 10px 0 0;
+}
