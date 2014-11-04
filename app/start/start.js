@@ -19,6 +19,7 @@ angular.module('eredax.start', ['ngRoute'])
   });
 
   sc.DataAgeActual = 32;
+  sc.limit = 5;
   
   sc.DataAgeActual = function(){
     //TODO: Compare LatestUpdate with current datetime
