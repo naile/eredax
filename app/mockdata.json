@@ -1,4 +1,4 @@
-{  
+Ôªø{  
    "StatusCode":0,
    "Message":null,
    "ExecutionTime":1083,
@@ -12,7 +12,7 @@
          {  
             "JourneyDirection":2,
             "GroupOfLine":null,
-            "StopAreaName":"Kallh‰lls station",
+            "StopAreaName":"Kallh√§lls station",
             "StopAreaNumber":51608,
             "StopPointNumber":51608,
             "StopPointDesignation":"C",
@@ -28,7 +28,7 @@
          {  
             "JourneyDirection":1,
             "GroupOfLine":null,
-            "StopAreaName":"Kallh‰lls station",
+            "StopAreaName":"Kallh√§lls station",
             "StopAreaNumber":51608,
             "StopPointNumber":51609,
             "StopPointDesignation":"B",
@@ -38,13 +38,13 @@
             "Deviations":null,
             "TransportMode":"BUS",
             "LineNumber":"548",
-            "Destination":"St‰ket (Kajsas Hof)",
+            "Destination":"St√§ket (Kajsas Hof)",
             "SiteId":9701
          },
          {  
             "JourneyDirection":2,
             "GroupOfLine":null,
-            "StopAreaName":"Kallh‰lls station",
+            "StopAreaName":"Kallh√§lls station",
             "StopAreaNumber":51608,
             "StopPointNumber":51681,
             "StopPointDesignation":"E",
@@ -60,7 +60,7 @@
          {  
             "JourneyDirection":2,
             "GroupOfLine":null,
-            "StopAreaName":"Kallh‰lls station",
+            "StopAreaName":"Kallh√§lls station",
             "StopAreaNumber":51608,
             "StopPointNumber":51681,
             "StopPointDesignation":"E",
@@ -70,13 +70,13 @@
             "Deviations":null,
             "TransportMode":"BUS",
             "LineNumber":"560",
-            "Destination":"Upplands V‰sby station",
+            "Destination":"Upplands V√§sby station",
             "SiteId":9701
          },
          {  
             "JourneyDirection":2,
             "GroupOfLine":null,
-            "StopAreaName":"Kallh‰lls station",
+            "StopAreaName":"Kallh√§lls station",
             "StopAreaNumber":51608,
             "StopPointNumber":51608,
             "StopPointDesignation":"C",
@@ -94,7 +94,7 @@
          {  
             "JourneyDirection":2,
             "SecondaryDestinationName":null,
-            "StopAreaName":"Kallh‰ll",
+            "StopAreaName":"Kallh√§ll",
             "StopAreaNumber":6071,
             "StopPointNumber":6072,
             "StopPointDesignation":"2",
@@ -104,13 +104,13 @@
             "Deviations":null,
             "TransportMode":"TRAIN",
             "LineNumber":"35",
-            "Destination":"Kungs‰ngen",
+            "Destination":"Kungs√§ngen",
             "SiteId":9701
          },
          {  
             "JourneyDirection":1,
             "SecondaryDestinationName":"Stockholm C",
-            "StopAreaName":"Kallh‰ll",
+            "StopAreaName":"Kallh√§ll",
             "StopAreaNumber":6071,
             "StopPointNumber":6071,
             "StopPointDesignation":"1",
@@ -120,13 +120,13 @@
             "Deviations":null,
             "TransportMode":"TRAIN",
             "LineNumber":"35",
-            "Destination":"V‰sterhaninge",
+            "Destination":"V√§sterhaninge",
             "SiteId":9701
          },
          {  
             "JourneyDirection":2,
             "SecondaryDestinationName":null,
-            "StopAreaName":"Kallh‰ll",
+            "StopAreaName":"Kallh√§ll",
             "StopAreaNumber":6071,
             "StopPointNumber":6072,
             "StopPointDesignation":"2",
@@ -136,13 +136,13 @@
             "Deviations":null,
             "TransportMode":"TRAIN",
             "LineNumber":"35",
-            "Destination":"BÂlsta",
+            "Destination":"B√•lsta",
             "SiteId":9701
          },
          {  
             "JourneyDirection":2,
             "SecondaryDestinationName":null,
-            "StopAreaName":"Kallh‰ll",
+            "StopAreaName":"Kallh√§ll",
             "StopAreaNumber":6071,
             "StopPointNumber":6072,
             "StopPointDesignation":"2",
@@ -152,13 +152,13 @@
             "Deviations":null,
             "TransportMode":"TRAIN",
             "LineNumber":"35",
-            "Destination":"Kungs‰ngen",
+            "Destination":"Kungs√§ngen",
             "SiteId":9701
          },
          {  
             "JourneyDirection":1,
             "SecondaryDestinationName":"Stockholm C",
-            "StopAreaName":"Kallh‰ll",
+            "StopAreaName":"Kallh√§ll",
             "StopAreaNumber":6071,
             "StopPointNumber":6071,
             "StopPointDesignation":"1",
@@ -168,13 +168,13 @@
             "Deviations":null,
             "TransportMode":"TRAIN",
             "LineNumber":"35",
-            "Destination":"Nyn‰shamn",
+            "Destination":"Nyn√§shamn",
             "SiteId":9701
          },
          {  
             "JourneyDirection":2,
             "SecondaryDestinationName":null,
-            "StopAreaName":"Kallh‰ll",
+            "StopAreaName":"Kallh√§ll",
             "StopAreaNumber":6071,
             "StopPointNumber":6072,
             "StopPointDesignation":"2",
@@ -184,13 +184,13 @@
             "Deviations":null,
             "TransportMode":"TRAIN",
             "LineNumber":"35",
-            "Destination":"BÂlsta",
+            "Destination":"B√•lsta",
             "SiteId":9701
          },
          {  
             "JourneyDirection":2,
             "SecondaryDestinationName":null,
-            "StopAreaName":"Kallh‰ll",
+            "StopAreaName":"Kallh√§ll",
             "StopAreaNumber":6071,
             "StopPointNumber":6072,
             "StopPointDesignation":"2",
@@ -200,7 +200,7 @@
             "Deviations":null,
             "TransportMode":"TRAIN",
             "LineNumber":"35",
-            "Destination":"Kungs‰ngen",
+            "Destination":"Kungs√§ngen",
             "SiteId":9701
          }
       ],
