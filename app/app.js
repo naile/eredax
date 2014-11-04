@@ -4,7 +4,6 @@
 angular.module('eredax', [
   'ngRoute',
   'eredax.start',
-  'eredax.view2',
   'eredax.version',
   'eredax.dataServices',
   'eredax.configuration'
