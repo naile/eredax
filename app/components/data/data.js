@@ -6,7 +6,7 @@ dataServices.factory('Data', ['$http', '$interval', '$rootScope', 'Config', func
 
   var self = {};
   var apiUrl = '/api2/realtimedepartures.json?'
-  var query = apiUrl + 'key=' + self.apikeys.sl_realtid + '&siteid=' + self.siteid + '&TimeWindow=' + 60;
+  var query = "";
 
   function refresh(url) {
     $http.get(url).success(function(data) {
@@ -16,13 +16,19 @@ dataServices.factory('Data', ['$http', '$interval', '$rootScope', 'Config', func
   }
 
   Config.getConfig().then(function(result) {
-    self.apikeys = result.apikeys;
-    self.siteid = result.stations[0].id;
+  	console.log(result);
+
+    var siteid = result.stations[0].id;
+    self.queryUrl = apiUrl + 'key=' + result.apikeys.sl_realtid + '&siteid=' + siteid + '&TimeWindow=' + 60;
+
     self.interval = $interval(function(){
-      refresh();
+      refresh(self.queryUrl);
     }, 60 * 1000);
 
-  refresh('mockdata.json');
+    refresh(self.queryUrl);
   })
+
+  
+
   return self;
 }]);
