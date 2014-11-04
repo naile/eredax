@@ -6,7 +6,8 @@ angular.module('eredax', [
   'eredax.start',
   'eredax.view2',
   'eredax.version',
-  'eredax.dataServices'
+  'eredax.dataServices',
+  'eredax.configuration'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/start'});

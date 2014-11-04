@@ -1,0 +1,17 @@
+{
+  "title": "Eredax",
+  "width": 720,
+  "height": 1280,
+  "timeWindow": 60,
+  "apikeys" : {
+    "sl_realtid": "xxxxxxxxxxxx",
+    "sl_storning" : "xxxxxxxxxxxx",
+    "sl_trafiklage" : "xxxxxxxxxxxx"
+  },
+  "stations": [
+    {
+    "id": 9701,
+    "name": "Kallhälls station (Järfälla)"
+  }
+  ]
+}

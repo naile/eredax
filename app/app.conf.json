@@ -1,16 +1,17 @@
-{
+Ôªø{
   "title": "Eredax",
   "width": 720,
   "height": 1280,
+  "timeWindow": 60,
   "apikeys" : {
     "sl_realtid": "271067495164489ebc37879f8d030b39",
-	"sl_storning" : "xxxxxxxxxxxx",
-	"sl_trafiklage" : "xxxxxxxxxxxx"
+    "sl_storning" : "xxxxxxxxxxxx",
+    "sl_trafiklage" : "xxxxxxxxxxxx"
   },
   "stations": [
     {
 	  "id": 9701,
-	  "name": "Kallh‰lls station (J‰rf‰lla)",
+	  "name": "Kallh√§lls station (J√§rf√§lla)"
 	}
   ]
 }
