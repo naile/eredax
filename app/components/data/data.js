@@ -19,11 +19,12 @@ dataServices.factory('Data', ['$http', '$interval', '$rootScope', 'Config', func
   	console.log(result);
 
     var siteid = result.stations[0].id;
-    self.queryUrl = apiUrl + 'key=' + result.apikeys.sl_realtid + '&siteid=' + siteid + '&TimeWindow=' + 60;
+    var timeWindow = result.timeWindow;
+    self.queryUrl = apiUrl + 'key=' + result.apikeys.sl_realtid + '&siteid=' + siteid + '&TimeWindow=' + timeWindow;
 
     self.interval = $interval(function(){
       refresh(self.queryUrl);
-    }, 60 * 1000);
+    }, result.updateInterval * 1000);
 
     refresh(self.queryUrl);
   })
