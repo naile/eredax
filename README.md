@@ -24,4 +24,4 @@ Edit `/app/example.conf.json` (rename to <b>app.conf.json</b>)
 
 Run
 ---
-`node start.js` or `npm start`
+`node server.js` or `npm start`
