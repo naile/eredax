@@ -13,7 +13,7 @@ angular.module('eredax.start', ['ngRoute'])
   function setData(data) {
     sc.trains = data.ResponseData.Trains;
     sc.buses = data.ResponseData.Buses;
-    sc.latestUpdate = data.ResponseData.LatestUpdate;
+    sc.latestUpdate = moment(data.ResponseData.LatestUpdate);
     sc.limit = Data.limit;
   }
 
@@ -23,10 +23,8 @@ angular.module('eredax.start', ['ngRoute'])
 
   sc.limit = 5;
   sc.latestUpdate = moment();
-  
-  sc.DataAgeActual = function(){
-    //TODO: Compare LatestUpdate with current datetime
-    //and return difference in human readable format - moment.js?
-    return sc.latestUpdate;
+  if(Data.latest != null) {
+    setData(Data.latest);
   }
+
 }]);
