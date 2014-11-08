@@ -6,8 +6,6 @@ configService.factory('Config', ['$http', function($http) {
 
   var getConfig = function() {
     return $http.get('app.conf.json', {cache: true}).then(function(result) {
-      console.log('configuration fetched data');
-      console.log(result);
       return result.data;
     });
   };
