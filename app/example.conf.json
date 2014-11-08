@@ -3,6 +3,7 @@
   "width": 720,
   "height": 1280,
   "timeWindow": 30,
+  "maxItemsPerList": 10,
   "updateInterval": 120,
   "apikeys" : {
     "sl_realtid": "xxxxxxxxxxxx",
