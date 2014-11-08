@@ -1,8 +1,8 @@
-<p>Uppdaterad: {{latestUpdate}} ({{dataAgeActual}} sekunder sedan)</p>
+<p>Uppdaterad: {{latestUpdate}} ({{DataAgeActual}} sekunder sedan)</p>
 
 <h2><span class="traffic-icon">J</span>Pendeltåg</h2>
-<ul class="list-group departures" ng-repeat="departure in trains | limitTo: limit">
-  <li class="list-group-item">
+<ul class="list-group departures">
+  <li class="list-group-item" ng-repeat="departure in trains | limitTo: limit">
     <span class="departure-line">{{departure.LineNumber}}</span>
     <span class="departure-title">{{departure.Destination}}</span>
     <span class="departure-time pull-right">{{departure.DisplayTime}}</span>
@@ -11,8 +11,8 @@
 <hr>
 
 <h2><span class="traffic-icon">B</span>Buss</h2>
-<ul class="list-group departures" ng-repeat="departure in buses | limitTo: limit">
-  <li class="list-group-item">
+<ul class="list-group departures" >
+  <li class="list-group-item" ng-repeat="departure in buses | limitTo: limit">
     <span class="departure-line">{{departure.LineNumber}}</span>
     <span class="departure-title">{{departure.Destination}}</span>
     <span class="departure-time pull-right">{{departure.DisplayTime}}</span>
