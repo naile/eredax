@@ -33,5 +33,7 @@ app.run(function(amMoment) {
           y : 'ett år',
           yy : '%d år'
       },
-    })
+    });
+    moment.relativeTimeThreshold('s', 55);
+    moment.relativeTimeThreshold('m', 55);
 });
