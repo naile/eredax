@@ -12,13 +12,23 @@ dataServices.factory('Data', ['$http', '$interval', '$rootScope', 'Config', func
     $http.get(url).success(function(data) {
       //console.log('dataserviced fetched new data');
       self.latest = data;
-      $rootScope.$broadcast('newList', data);
+      setMomentTime(self.latest.ResponseData.Trains);
+      setMomentTime(self.latest.ResponseData.Buses);
+      setMomentTime(self.latest.ResponseData.Trams);
+      $rootScope.$broadcast('newList', self.latest);
     });
   }
 
   function queryUrl (apikey, siteid, timeWindow)
   {
     return apiUrl + 'key=' + apikey + '&siteid=' + siteid + '&TimeWindow=' + timeWindow;
+  }
+
+  function setMomentTime(collection) {
+    if(collection == null) return;
+    for(var i = 0; i < collection.length; i++) {
+      collection[i].ExpectedDateTimeMoment = moment(collection[i].ExpectedDateTime);
+    }
   }
 
   Config.getConfig().then(function(result) {

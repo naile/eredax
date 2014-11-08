@@ -17,4 +17,21 @@ config(['$routeProvider', function($routeProvider) {
 
 app.run(function(amMoment) {
     amMoment.changeLocale('sv');
+    moment.locale('sv', {
+      relativeTime : {
+          future : '%s',
+          past : 'Nu',
+          s : 'Nu',
+          m : '1 min',
+          mm : '%d min',
+          h : 'en timme',
+          hh : '%d timmar',
+          d : 'en dag',
+          dd : '%d dagar',
+          M : 'en månad',
+          MM : '%d månader',
+          y : 'ett år',
+          yy : '%d år'
+      },
+    })
 });

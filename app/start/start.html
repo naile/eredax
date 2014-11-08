@@ -1,11 +1,15 @@
 <p>Uppdaterad <span am-time-ago="latestUpdate"></span> <span>({{latestUpdate | amCalendar}})</span></p>
+<div ng-if="dataAge >= 180" class="alert-danger" role="alert">
+  <strong>Varning</strong>
+    Ej uppdaterat de senaste {{dataAge}} sekunderna
+</div>
 
 <h2><span class="traffic-icon">J</span>Pendeltåg</h2>
 <ul class="list-group departures">
   <li class="list-group-item" ng-repeat="departure in trains | limitTo: limit">
     <span class="departure-line">{{departure.LineNumber}}</span>
     <span class="departure-title">{{departure.Destination}}</span>
-    <span class="departure-time pull-right">{{departure.DisplayTime}}</span>
+    <span class="departure-time pull-right" am-time-ago="departure.ExpectedDateTimeMoment"></span>
   </li>
 </ul>
 <hr>
@@ -15,6 +19,6 @@
   <li class="list-group-item" ng-repeat="departure in buses | limitTo: limit">
     <span class="departure-line">{{departure.LineNumber}}</span>
     <span class="departure-title">{{departure.Destination}}</span>
-    <span class="departure-time pull-right">{{departure.DisplayTime}}</span>
+    <span class="departure-time pull-right" am-time-ago="departure.ExpectedDateTimeMoment"></span>
   </li>
 </ul>
