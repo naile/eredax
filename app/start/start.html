@@ -11,6 +11,12 @@
     <span class="departure-title">{{departure.Destination}}</span>
     <span ng-show="showMoment(departure.ExpectedDateTimeMoment)" class="departure-time pull-right" am-time-ago="departure.ExpectedDateTimeMoment"></span>
     <span ng-hide="showMoment(departure.ExpectedDateTimeMoment)" class="departure-time pull-right">{{departure.ExpectedDateTimeMoment | amDateFormat: 'hh:mm'}}</span>
+    <ul class="list-unstyled list-group deviation bg-warning" ng-if="departure.Deviations">
+      <li ng-repeat="deviation in departure.Deviations">
+        <strong>{{deviation.Consequence}}</strong>
+        <span>{{deviation.Text}}</span>
+      </li>
+    </ul>
   </li>
 </ul>
 <hr>
