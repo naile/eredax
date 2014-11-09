@@ -22,6 +22,10 @@ angular.module('eredax.start', ['ngRoute'])
     //console.log(sc.dataAge);
   }
 
+  sc.showMoment = function(time) {
+    return moment().diff(time, 'minutes') < -30 ? false : true;
+  };
+
   sc.$on('newList', function(ev, data) {
     setData(data);
   });

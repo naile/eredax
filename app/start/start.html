@@ -9,16 +9,18 @@
   <li class="list-group-item" ng-repeat="departure in trains | limitTo: limit">
     <span class="departure-line">{{departure.LineNumber}}</span>
     <span class="departure-title">{{departure.Destination}}</span>
-    <span class="departure-time pull-right" am-time-ago="departure.ExpectedDateTimeMoment"></span>
+    <span ng-show="showMoment(departure.ExpectedDateTimeMoment)" class="departure-time pull-right" am-time-ago="departure.ExpectedDateTimeMoment"></span>
+    <span ng-hide="showMoment(departure.ExpectedDateTimeMoment)" class="departure-time pull-right">{{departure.ExpectedDateTimeMoment | amDateFormat: 'hh:mm'}}</span>
   </li>
 </ul>
 <hr>
 
 <h2><span class="traffic-icon">B</span>Buss</h2>
 <ul class="list-group departures" >
-  <li class="list-group-item" ng-repeat="departure in buses | limitTo: limit">
+  <li class="list-group-item" ng-repeat="departure in trains | limitTo: limit">
     <span class="departure-line">{{departure.LineNumber}}</span>
     <span class="departure-title">{{departure.Destination}}</span>
-    <span class="departure-time pull-right" am-time-ago="departure.ExpectedDateTimeMoment"></span>
+    <span ng-hide="showMoment(departure.ExpectedDateTimeMoment)" class="departure-time pull-right" am-time-ago="departure.ExpectedDateTimeMoment"></span>
+    <span ng-show="showMoment(departure.ExpectedDateTimeMoment)" class="departure-time pull-right">{{departure.ExpectedDateTimeMoment | amDateFormat: 'hh:mm'}}</span>
   </li>
 </ul>
