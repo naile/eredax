@@ -6,7 +6,7 @@
 
 <h2><span class="traffic-icon">J</span>Pendeltåg</h2>
 <ul class="list-group departures">
-  <li class="list-group-item" ng-repeat="departure in trains | limitTo: limit">
+  <li class="list-group-item" ng-repeat="departure in trains | limitTo: trainLimit">
     <span class="departure-line">{{departure.LineNumber}}</span>
     <span class="departure-title">{{departure.Destination}}</span>
     <span ng-show="showMoment(departure.ExpectedDateTimeMoment)" class="departure-time pull-right" am-time-ago="departure.ExpectedDateTimeMoment"></span>
@@ -23,7 +23,7 @@
 
 <h2><span class="traffic-icon">B</span>Buss</h2>
 <ul class="list-group departures">
-  <li class="list-group-item" ng-repeat="departure in buses | limitTo: limit">
+  <li class="list-group-item" ng-repeat="departure in buses | limitTo: busLimit">
     <span class="departure-line">{{departure.LineNumber}}</span>
     <span class="departure-title">{{departure.Destination}}</span>
     <span ng-show="showMoment(departure.ExpectedDateTimeMoment)" class="departure-time pull-right" am-time-ago="departure.ExpectedDateTimeMoment"></span>

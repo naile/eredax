@@ -15,6 +15,9 @@ dataServices.factory('Data', ['$http', '$interval', '$rootScope', 'Config', func
       setMomentTime(self.latest.ResponseData.Trains);
       setMomentTime(self.latest.ResponseData.Buses);
       setMomentTime(self.latest.ResponseData.Trams);
+      countDeviations(self.latest.ResponseData.Trains);
+      countDeviations(self.latest.ResponseData.Buses);
+      countDeviations(self.latest.ResponseData.Trams);
       $rootScope.$broadcast('newList', self.latest);
     });
   }
@@ -29,6 +32,18 @@ dataServices.factory('Data', ['$http', '$interval', '$rootScope', 'Config', func
     for(var i = 0; i < collection.length; i++) {
       collection[i].ExpectedDateTimeMoment = moment(collection[i].ExpectedDateTime);
     }
+  }
+
+  function countDeviations(collection) {
+    //TODO: use array.map instead
+    if(collection == null) return;
+    var deviations = 0;
+    for(var i = 0; i < collection.length; i++) {
+      deviations += collection[i].Deviations == null
+      ? 0
+      : collection[i].Deviations.length;
+    }
+    collection.DevationCount = deviations;
   }
 
   Config.getConfig().then(function(result) {

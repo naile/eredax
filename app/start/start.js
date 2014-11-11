@@ -14,7 +14,8 @@ angular.module('eredax.start', ['ngRoute'])
     sc.latestUpdate = moment(data.ResponseData.LatestUpdate);
     sc.trains = data.ResponseData.Trains;
     sc.buses = data.ResponseData.Buses;
-    sc.limit = Data.limit;
+    sc.trainLimit = Data.limit - data.ResponseData.Trains.DevationCount;
+    sc.busLimit = Data.limit - data.ResponseData.Buses.DevationCount;
   }
 
   sc.updateDataAge = function dataAge() {
