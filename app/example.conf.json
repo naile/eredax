@@ -5,15 +5,13 @@
   "timeWindow": 30,
   "maxItemsPerList": 10,
   "updateInterval": 120,
-  "apikeys" : {
+  "apikeys": {
     "sl_realtid": "xxxxxxxxxxxx",
-    "sl_storning" : "xxxxxxxxxxxx",
-    "sl_trafiklage" : "xxxxxxxxxxxx"
+    "sl_storning": "xxxxxxxxxxxx",
+    "sl_trafiklage": "xxxxxxxxxxxx"
   },
-  "stations": [
-    {
+  "startStation": {
     "id": 9001,
     "name": "T-centralen"
   }
-  ]
 }
