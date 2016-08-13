@@ -1,0 +1,12 @@
+{
+  "title": "Eredax",
+  "width": 720,
+  "height": 1280,
+  "timeWindow": 60,
+  "maxItemsPerList": 10,
+  "updateInterval": 60,
+  "startStation": {
+    "id": 9701,
+    "name": "Kallhäll"
+  }
+}

@@ -20,7 +20,7 @@ Configure
 ---------
 Get API keys: https://www.trafiklab.se
 
-Edit `/app/example.conf.json` (rename to <b>app.conf.json</b>)
+Edit `example.config.js` (rename to <b>config.js</b>)
 
 Run
 ---

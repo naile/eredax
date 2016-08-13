@@ -5,7 +5,7 @@ var dataServices = angular.module('eredax.dataServices', []);
 dataServices.factory('Data', ['$http', '$interval', '$rootScope', 'Config', function ($http, $interval, $rootScope, Config) {
 
   var self = {};
-  var apiUrl = '/api2/realtimedepartures.json?'
+  var apiUrl = '/api/realtimedepartures.json?'
   var query = "";
 
   function refresh(url) {
@@ -22,8 +22,8 @@ dataServices.factory('Data', ['$http', '$interval', '$rootScope', 'Config', func
     });
   }
 
-  function queryUrl(apikey, siteid, timeWindow) {
-    return apiUrl + 'key=' + apikey + '&siteid=' + siteid + '&TimeWindow=' + timeWindow;
+  function queryUrl(siteid, timeWindow) {
+    return apiUrl + 'siteid=' + siteid + '&TimeWindow=' + timeWindow;
   }
 
   function setMomentTime(collection) {
@@ -47,10 +47,9 @@ dataServices.factory('Data', ['$http', '$interval', '$rootScope', 'Config', func
 
   Config.getConfig().then(function (result) {
     var siteid = result.startStation.id;
-    var apikey = result.apikeys.sl_realtid;
     var timeWindow = result.timeWindow;
 
-    self.queryUrl = queryUrl(apikey, siteid, timeWindow);
+    self.queryUrl = queryUrl(siteid, timeWindow);
     self.limit = result.maxItemsPerList;
 
     self.interval = $interval(function () {

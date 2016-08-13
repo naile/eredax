@@ -17,6 +17,6 @@
   },
   "dependencies": {
     "express": "^4.10.1",
-    "json-proxy": "^0.3.0"
+    "json-proxy": "^0.9.1"
   }
 }
