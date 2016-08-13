@@ -1,5 +1,9 @@
 /* app css stylesheet */
 
+body{
+  font-size: 12px;
+  font-size: 1.5vw;
+}
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -7,6 +11,9 @@
   padding: 0 0 0.5em;
 }
 
+.list-group {
+  margin-bottom: 0px;
+}
 .menu:before {
   content: "[";
 }
