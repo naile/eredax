@@ -29,7 +29,9 @@ function cacheResponse(res, cacheKey, ttl) {
   res.on('data', function (chunk) {
     body.push(chunk)
   }).on('end', function () {
-    cache.put(cacheKey, JSON.parse(Buffer.concat(body).toString()), ttl);
+    var result = JSON.parse(Buffer.concat(body).toString());
+    if(result.StatusCode === 0)
+      cache.put(cacheKey, result, ttl);
   })
 }
 
