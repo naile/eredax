@@ -9,38 +9,27 @@ angular.module('eredax.start', ['ngRoute'])
   });
 }])
 
-.controller('StartCtrl', ['$scope', '$interval', 'Data', function(sc, interval, Data) {
-  function setData(data) {
-    sc.latestUpdate = moment(data.ResponseData.LatestUpdate);
-    sc.trains = data.ResponseData.Trains;
-    sc.buses = data.ResponseData.Buses;
-    sc.trainLimit = Data.limit - data.ResponseData.Trains.DevationCount;
-    sc.busLimit = Data.limit - data.ResponseData.Buses.DevationCount;
+.controller('StartCtrl', ['$scope', '$interval', 'SLApi', function(sc, interval, SLApi) {
+  sc.latestUpdate = moment();
+
+  function updateDepartures(departures) {
+    sc.latestUpdate = moment(departures.LatestUpdate);
+    sc.trains = departures.Trains;
+    sc.buses = departures.Buses;
+    sc.trainLimit = SLApi.limit - departures.Trains.DevationCount;
+    sc.busLimit = SLApi.limit - departures.Buses.DevationCount;
   }
 
-  sc.updateDataAge = function dataAge() {
-    sc.dataAge = sc.latestUpdate == null ? -1 : moment().diff(sc.latestUpdate, 'seconds');
-    //console.log(sc.dataAge);
-  }
-
-  sc.showMoment = function(time) {
+  sc.showMoment = function (time) {
     return moment().diff(time, 'minutes') < -30 ? false : true;
   };
 
   sc.$on('newList', function(ev, data) {
-    setData(data);
+    updateDepartures(data.ResponseData);
   });
 
-  sc.interval = interval(function() {
-    sc.updateDataAge();
+  sc.interval = interval(function () {
+    sc.dataAge = sc.latestUpdate == null ? -1 : moment().diff(sc.latestUpdate, 'seconds');
   }, 1 * 1000);
-
-  sc.limit = 5;
-  sc.latestUpdate = moment();
-  sc.dataAge = -1;
-
-  if(Data.latest != null) {
-    setData(Data.latest);
-  }
 
 }]);

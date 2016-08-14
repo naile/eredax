@@ -2,16 +2,16 @@
 
 var dataServices = angular.module('eredax.dataServices', []);
 
-dataServices.factory('Data', ['$http', '$interval', '$rootScope', 'Config', function ($http, $interval, $rootScope, Config) {
+dataServices.factory('SLApi', ['$http', '$interval', '$rootScope', 'Config', function ($http, $interval, $rootScope, Config) {
 
   var self = {};
   var apiUrl = '/api/realtimedepartures.json?'
   var query = "";
 
   function refresh(url) {
-    $http.get(url).success(function (data) {
+    $http.get(url).success(function (result) {
       //console.log('dataserviced fetched new data');
-      self.latest = data;
+      self.latest = result;
       setMomentTime(self.latest.ResponseData.Trains);
       setMomentTime(self.latest.ResponseData.Buses);
       setMomentTime(self.latest.ResponseData.Trams);
