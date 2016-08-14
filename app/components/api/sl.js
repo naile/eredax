@@ -10,7 +10,9 @@ dataServices.factory('SLApi', ['$http', '$interval', '$rootScope', 'Config', fun
 
   function refresh(url) {
     $http.get(url).success(function (result) {
-      //console.log('dataserviced fetched new data');
+      if (result.StatusCode !== 0) {
+        return;
+      }
       self.latest = result;
       setMomentTime(self.latest.ResponseData.Trains);
       setMomentTime(self.latest.ResponseData.Buses);
