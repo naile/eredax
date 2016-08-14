@@ -2,30 +2,30 @@
 
 var dataServices = angular.module('eredax.dataServices', []);
 
-dataServices.factory('SLApi', ['$http', '$interval', '$rootScope', 'Config', function ($http, $interval, $rootScope, Config) {
+dataServices.factory('SLApi', ['$http', function ($http) {
 
   var self = {};
-  var apiUrl = '/api/realtimedepartures.json?'
-  var query = "";
+  self.apiUrl = '/api/realtimedepartures.json?'
+  self.get = get;
 
-  function refresh(url) {
-    $http.get(url).success(function (result) {
-      if (result.StatusCode !== 0) {
-        return;
-      }
-      self.latest = result;
-      setMomentTime(self.latest.ResponseData.Trains);
-      setMomentTime(self.latest.ResponseData.Buses);
-      setMomentTime(self.latest.ResponseData.Trams);
-      countDeviations(self.latest.ResponseData.Trains);
-      countDeviations(self.latest.ResponseData.Buses);
-      countDeviations(self.latest.ResponseData.Trams);
-      $rootScope.$broadcast('newList', self.latest);
-    });
+  function get(siteid, timeWindow) {
+    return $http.get(queryUrl(siteid, timeWindow))
+      .then(function (result) {
+        if (result.status !== 200 || result.data.StatusCode !== 0) {
+          return null;
+        }
+        setMomentTime(result.data.ResponseData.Trains);
+        setMomentTime(result.data.ResponseData.Buses);
+        setMomentTime(result.data.ResponseData.Trams);
+        countDeviations(result.data.ResponseData.Trains);
+        countDeviations(result.data.ResponseData.Buses);
+        countDeviations(result.data.ResponseData.Trams);
+        return result.data.ResponseData
+      });
   }
 
   function queryUrl(siteid, timeWindow) {
-    return apiUrl + 'siteid=' + siteid + '&TimeWindow=' + timeWindow;
+    return self.apiUrl + 'siteid=' + siteid + '&TimeWindow=' + timeWindow;
   }
 
   function setMomentTime(collection) {
@@ -46,20 +46,6 @@ dataServices.factory('SLApi', ['$http', '$interval', '$rootScope', 'Config', fun
     }
     collection.DevationCount = deviations;
   }
-
-  Config.getConfig().then(function (result) {
-    var siteid = result.startStation.id;
-    var timeWindow = result.timeWindow;
-
-    self.queryUrl = queryUrl(siteid, timeWindow);
-    self.limit = result.maxItemsPerList;
-
-    self.interval = $interval(function () {
-      refresh(self.queryUrl);
-    }, result.updateInterval * 1000);
-
-    refresh(self.queryUrl);
-  })
 
   return self;
 }]);
