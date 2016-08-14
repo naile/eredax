@@ -4,6 +4,7 @@
 var app = angular.module('eredax', [
   'ngRoute',
   'eredax.page',
+  'eredax.start',
   'eredax.departure',
   'eredax.version',
   'eredax.dataServices',
@@ -11,9 +12,9 @@ var app = angular.module('eredax', [
   'eredax.configuration',
   'angularMoment'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/9701'});
-}]);
+  config(['$routeProvider', function ($routeProvider) {
+    $routeProvider.otherwise({ redirectTo: '/start' });
+  }]);
 
 app.run(function(amMoment) {
     amMoment.changeLocale('sv');
