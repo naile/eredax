@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('eredax.start', ['ngRoute'])
+angular.module('eredax.departure', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/start', {
-    templateUrl: 'start/start.html',
-    controller: 'StartCtrl'
+  $routeProvider.when('/:stationId', {
+    templateUrl: 'departure/departure.html',
+    controller: 'DepartureCtrl'
   });
 }])
 
-.controller('StartCtrl', ['$scope', '$interval', 'SLApi', function(sc, interval, SLApi) {
+.controller('DepartureCtrl', ['$scope', '$interval', 'SLApi', function(sc, interval, SLApi) {
   sc.latestUpdate = moment();
 
   function updateDepartures(departures) {
@@ -29,8 +29,15 @@ angular.module('eredax.start', ['ngRoute'])
     updateDepartures(data.ResponseData);
   });
 
-  sc.interval = interval(function () {
+  sc.ageInterval = interval(function () {
     sc.dataAge = sc.latestUpdate == null ? -1 : moment().diff(sc.latestUpdate, 'seconds');
   }, 1 * 1000);
+
+  sc.$on('$destroy', function() {
+    if (angular.isDefined(sc.ageInterval)){
+      interval.cancel(sc.ageInterval)
+      sc.ageInterval = undefined;
+    }
+  });
 
 }]);

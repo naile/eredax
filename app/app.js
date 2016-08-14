@@ -4,7 +4,7 @@
 var app = angular.module('eredax', [
   'ngRoute',
   'eredax.page',
-  'eredax.start',
+  'eredax.departure',
   'eredax.version',
   'eredax.dataServices',
   'eredax.pageService',
@@ -12,7 +12,7 @@ var app = angular.module('eredax', [
   'angularMoment'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/start'});
+  $routeProvider.otherwise({redirectTo: '/9701'});
 }]);
 
 app.run(function(amMoment) {
