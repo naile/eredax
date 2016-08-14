@@ -3,7 +3,7 @@
 var pageService = angular.module('eredax.pageService', []);
 
 pageService.factory('Page', ['Config', function (Config) {
-  var title = 'foobar';
+  var title = 'Eredax';
   return {
     title: function () { return title; },
     setTitle: function (newTitle) { title = newTitle; }
