@@ -14,6 +14,7 @@ angular.module('eredax.start', ['ngRoute'])
 
   function updateDepartures(departures) {
     sc.latestUpdate = moment(departures.LatestUpdate);
+    sc.stopDeviations = departures.StopPointDeviations;
     sc.trains = departures.Trains;
     sc.buses = departures.Buses;
     sc.trainLimit = SLApi.limit - departures.Trains.DevationCount;

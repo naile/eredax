@@ -1,6 +1,15 @@
-<p>Uppdaterad {{latestUpdate | amCalendar}}</span></p>
+<p>Uppdaterad {{latestUpdate | amCalendar}}</span>
+</p>
 <div ng-if="dataAge >= 180" class="alert-danger" role="alert">
   <strong>Varning</strong> Ej uppdaterat de senaste {{dataAge}} sekunderna
+</div>
+
+<div ng-if="stopDeviations" class="alert-warning" role="alert">
+  <div class="deviation stop-deviation marquee" ng-class="{'marquee-slow':stopDeviations.length > 1}">
+    <span ng-repeat-start="deviation in stopDeviations" ng-repeat-end>
+      {{deviation.Deviation.Text}} &nbsp;
+    </span>
+  </div>
 </div>
 
 <h2><span class="traffic-icon">J</span>Pendeltåg</h2>
