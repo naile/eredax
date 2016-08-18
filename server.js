@@ -8,7 +8,7 @@ var proxy = httpProxy.createProxyServer();
 
 app.use(express.static('app'));
 
-app.get('/api/realtimedepartures.json', function (req, res) {
+app.get('/api/realtimedepartures.json', noClientCache, function (req, res) {
   var query = url.parse(req.url).query;
   var cached = cache.get(query)
   if (cached) {
@@ -30,9 +30,16 @@ function cacheResponse(res, cacheKey, ttl) {
     body.push(chunk)
   }).on('end', function () {
     var result = JSON.parse(Buffer.concat(body).toString());
-    if(result.StatusCode === 0)
+    if (result.StatusCode === 0)
       cache.put(cacheKey, result, ttl);
   })
+}
+
+function noClientCache(req, res, next) {
+  res.header('Cache-Control', 'no-cache');
+  res.header('Expires', '-1');
+  res.header('Pragma', 'no-cache');
+  next();
 }
 
 var server = app.listen(conf.web.port, function () {
