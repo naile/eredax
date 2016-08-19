@@ -13,7 +13,8 @@
     "angular-bootstrap": "~0.3.x",
     "angular-resource": "~1.5.x",
     "bootstrap": "~3.3.x",
-    "angular-moment": "~0.10.x"
+    "angular-moment": "~0.10.x",
+    "prefix-free": "~1.0.x"
   },
   "resolutions": {
     "angular": "1.5.x"
