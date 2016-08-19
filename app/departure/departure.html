@@ -1,6 +1,6 @@
-<p>Uppdaterad {{latestUpdate | amCalendar}}</span>
+<p>Uppdaterad {{latestUpdate | amCalendar}} {{dataAge}}</span>
 </p>
-<div ng-if="dataAge >= 180" class="alert-danger" role="alert">
+<div ng-if="dataIsStale" class="alert-danger" role="alert">
   <strong>Varning</strong> Ej uppdaterat de senaste {{dataAge}} sekunderna
 </div>
 

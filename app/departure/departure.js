@@ -49,7 +49,8 @@ angular.module('eredax.departure', ['ngRoute'])
   };
 
   sc.ageInterval = interval(function () {
-    sc.dataAge = sc.latestUpdate == null ? -1 : moment().diff(sc.latestUpdate, 'seconds');
+    sc.dataAge = angular.isDefined(sc.latestUpdate) ? moment().diff(sc.latestUpdate, 'seconds') : -1;
+    sc.dataIsStale = sc.dataAge > Math.max(config.updateInterval * 3, 120);
   }, 1 * 1000);
 
   sc.$on('$destroy', function () {
