@@ -23,7 +23,7 @@ angular.module('eredax.departure', ['ngRoute'])
 
   function updateDepartures(departures) {
     sc.latestUpdate = moment(departures.LatestUpdate);
-    sc.stopDeviations = departures.StopPointDeviations;
+    sc.stopDeviations = mapDeviations(departures.StopPointDeviations);
     sc.trains = departures.Trains;
     sc.buses = departures.Buses;
     sc.trainLimit = SLApi.limit - departures.Trains.DevationCount;
@@ -36,6 +36,12 @@ angular.module('eredax.departure', ['ngRoute'])
         if(departures !== null)
           updateDepartures(departures)
       })
+  }
+
+  function mapDeviations(deviations) {
+    return deviations ?
+      deviations.map(function (el) { return el.Deviation.Text }).join(' ')
+      : undefined
   }
 
   sc.showMoment = function (time) {

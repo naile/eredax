@@ -5,10 +5,8 @@
 </div>
 
 <div ng-if="stopDeviations" class="alert-warning" role="alert">
-  <div class="deviation stop-deviation marquee" ng-class="{'marquee-slow':stopDeviations.length > 1}">
-    <span ng-repeat-start="deviation in stopDeviations" ng-repeat-end>
-      {{deviation.Deviation.Text}} &nbsp;
-    </span>
+  <div class="deviation stop-deviation marquee" ng-class="{'marquee-slow':stopDeviations.length > 100}">
+    <span>{{stopDeviations}}</span>
   </div>
 </div>
 
