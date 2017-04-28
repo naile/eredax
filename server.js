@@ -15,7 +15,7 @@ app.get('/api/realtimedepartures.json', noClientCache, function (req, res) {
     res.send(cached);
     return;
   }
-  var target = `${conf.slApiUrl}/realtimedepartures.json?${query}&key=${conf.apiKeys.sl_realtid}`;
+  var target = `${conf.slApiUrl}/realtimedeparturesV4.json?${query}&key=${conf.apiKeys.sl_realtid}`;
   proxy.web(req, res, { target: target, ignorePath: true });
 });
 
